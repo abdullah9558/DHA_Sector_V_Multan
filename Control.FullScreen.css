@@ -1,7 +1,7 @@
 .fullscreen-icon { background-image: url(fullin.PNG); background-size:25px 25px; background-repeat: no-repeat; background-position: center center;}
 .fullscreen-icon.leaflet-fullscreen-on { background-image: url(fullout.PNG);  background-size:30px 25px; background-repeat: no-repeat; background-position: center center;  }
-.leaflet-touch .fullscreen-icon { background-position: 10px 10px; }
-.leaflet-touch .fullscreen-icon.leaflet-fullscreen-on { background-position: 8px 10px; }
+.leaflet-touch .fullscreen-icon { background-position: 5.5px 5.5px; }
+.leaflet-touch .fullscreen-icon.leaflet-fullscreen-on { background-position: 3px 5px; }
 /* one selector per rule as explained here : http://www.sitepoint.com/html5-full-screen-api/ */
 .leaflet-container:-webkit-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
 .leaflet-container:-ms-fullscreen { width: 100% !important; height: 100% !important; z-index: 99999; }

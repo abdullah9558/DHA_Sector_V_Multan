@@ -25,7 +25,7 @@
   </div>
 
   <div id="transparency">
-    <label for="opacity">Opacity:</label>
+    <label for="opacity"></label>
     <input type="range" min="0" max="1" step="0.1" value="1" id="opacity">
   </div>
 
@@ -52,17 +52,6 @@
       maxZoom: 24,
       opacity: 1
     }).addTo(map);
-
-    var title = new L.Control();
-    title.onAdd = function (map) {
-      this._div = L.DomUtil.create('div', 'info');
-      this.update();
-      return this._div;
-    };
-    title.update = function () {
-      this._div.innerHTML = '<h2>DHA Multan Sector V</h2>';
-    };
-    title.addTo(map);
 
     function geolocateControl() {
       map.locate({ setView: true, enableHighAccuracy: true, watch: true });

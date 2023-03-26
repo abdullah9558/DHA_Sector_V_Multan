@@ -4,11 +4,11 @@ body {
 
 #transparency {
     position: absolute;
-    top: 185px;
+    top: 80px;
     right: 12px;
     z-index: 1000;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    background: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     padding: 2px;
 }
@@ -22,13 +22,14 @@ body {
 #geolocate {
     position: absolute;
     z-index: 1001;
-    top: 130px;
-    right: 10px;
-    height: 45px;
-    width: 45px;
-    border-radius: 8px;
+    top: 145px;
+    left: 10px;
+    height: 35px;
+    width: 35px;
+    border-radius: 4px;
     border: none;
     background-image: url('./geolocate.png');
+    background-color: white;
     background-size: 25px 25px;
     background-repeat: no-repeat;
     background-position: center center;
@@ -37,43 +38,41 @@ body {
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
     margin-bottom: 10px;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .leaflet-control-fullscreen-button {
     margin-right: 10px;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .leaflet-touch .leaflet-bar a:first-child {
-    height: 45px;
-    width: 45px;
-    border-radius: 8px;
+    height: 35px;
+    width: 35px;
+    border-radius: 4px;
 }
 
 .leaflet-touch .leaflet-bar a {
-    height: 45px;
-    width: 45px;
-    line-height: 45px;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
     font-size: 25px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: none;
 }
 
 .leaflet-touch .leaflet-bar a:last-child {
-    height: 45px;
-    width: 45px;
-    border-radius: 8px;
+    height: 35px;
+    width: 35px;
+    border-radius: 4px;
 }
 
-.info {
-    padding: 1px 2px;
-    font: 14px/16px Arial, Helvetica, sans-serif;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+.leaflet-touch .leaflet-control-layers-toggle{
+    height: 35px;
+    width: 35px;
+    
 }
 
-.leaflet-right .leaflet-control {
-    float: right;
-    margin-right: 10px;
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
+    border: none;
 }
