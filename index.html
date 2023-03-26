@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Leaflet.Control.FullScreen Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@latest/dist/leaflet.css" />
+  <link rel="stylesheet" href="Control.FullScreen.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+
+  <style type="text/css">
+    body {
+      margin: 0px;
+    }
+
+    #map {
+      width: 700vh;
+      max-width: 100%;
+      height: 100vh;
+    }
+
+    #geolocate {
+      position: absolute;
+      z-index: 1001;
+      top: 47px;
+      right: 10px;
+      height: 45px;
+      width: 45px;
+      border-radius: 4px;
+      border: none;
+      background-image: url('./geolocate.png');
+      background-size: 25px 25px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .leaflet-control-zoom-in,
+    .leaflet-control-zoom-out {
+      margin-bottom: 10px;
+    }
+
+    .leaflet-control-fullscreen-button {
+      margin-right: 10px;
+    }
+
+    .leaflet-touch .leaflet-bar a:first-child {
+      height: 45px;
+      width: 45px;
+    }
+
+    .leaflet-touch .leaflet-bar a {
+      height: 45px;
+      width: 45px;
+      line-height: 45px;
+      font-size: 25px;
+    }
+
+    .leaflet-touch .leaflet-bar a:last-child {
+      height: 45px;
+      width: 45px;
+    }
+
+    /* .leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
+      box-shadow: 10px;
+    } */
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.79.0/L.Control.Locate.min.js"
+    charset="utf-8"></script>
+
+  <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
+  <script src="Control.FullScreen.js"></script>
+</head>
+
+<body>
+  <div id="map">
+    <button id="geolocate" onclick="geolocateControl()"></button>
+  </div>
+
+  <script>
+
+    var map = L.map("map", {
+      tap: false,
+      fullscreenControl: true,
+      locateControl: true,
+      fullscreenControlOptions: {
+
+        title: "Show me the fullscreen !",
+        titleCancel: "Exit fullscreen mode",
+      },
+    }).setView([30.277885, 71.586471], 16);
+
+    L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+      maxZoom: 24,
+      subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    }).addTo(map);
+
+    var layer1 = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
+      attribution: 'DHA Sector V Multan',
+      maxZoom: 24,
+      opacity: 1
+    }).addTo(map);
+
+    function geolocateControl() {
+      map.locate({ setView: true, enableHighAccuracy: true, watch: true });
+    }
+
+    map.on("enterFullscreen", function () {
+      if (window.console) window.console.log("enterFullscreen");
+    });
+    map.on("exitFullscreen", function () {
+      if (window.console) window.console.log("exitFullscreen");
+    });
+  </script>
+</body>
+
+</html>
